@@ -4,6 +4,7 @@ import {Platform, StyleSheet, Text, View, TouchableOpacity, Image, Switch} from 
 import { PlaySound, StopSound, PlaySoundRepeat, PlaySoundMusicVolume } from 'react-native-play-sound';
 
 
+console.disableYellowBox = true;
 
 
 export default class App extends Component {
@@ -60,16 +61,27 @@ export default class App extends Component {
 
   chiFuma() {
     min = 1;
-    max = 150;
+    max = 700;
     rand = min + Math.random() * (max - min);
 
-    if (rand <= 50) {
-      PlaySound('cicileu')
-    } else if (rand > 50 && rand <= 100) {
-      PlaySound('bdiino')
-    } else if (rand > 100) {
+    if (rand <= 100) {
+      PlaySound('bau')
+    } else if (rand > 100 && rand <= 200) {
       PlaySound('bdii')
-    } else {
+    } else if (rand > 200 && rand <= 300) {
+      PlaySound('bdiino')
+    } else if (rand > 300 && rand <= 400) {
+      PlaySound('cicibdii')
+    } else if (rand > 400 && rand <= 500) {
+      PlaySound('cicileu')
+    } else if (rand > 500 && rand <= 600) {
+      PlaySound('nero')
+    } else if (rand > 600 && rand <= 700) {
+      PlaySound('pippo')
+    } 
+    
+    
+    else {
       this.generateRandomTime();
     }
   
